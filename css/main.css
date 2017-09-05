@@ -1,0 +1,15 @@
+body {
+	--nbOr: 1.61803398875;
+}
+
+#cardsZone {
+	--nbLines: 4;
+	--nbCols: 4;
+	--cardWidth: calc(100% / var(--nbCols));
+	--cardHeight: calc(var(--cardWidth) * var(--nbOr));
+}
+
+.cards {
+	width: var(--cardWidth);
+	height: var(--cardHeight);
+}

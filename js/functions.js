@@ -1,16 +1,13 @@
-const IMG_SRC = ['','','','',
-				'','','','',
-				'','','','',
-				'','','','',
-				'','','','',
-				'','','','',
-				'','','',''];
+const IMG_SRC = {
+	default: 'img/theme/default/'
+};
 
-let Card = function(imgSrc, idDom = '') {
-	this.imgBack = this.setImgBack('img/cardBack.png' );
-	this.imgUp = this.setImgUp(imgSrc);
-	this.up = false;
-	this.dom = this.setDom(idDom);
+let Card = function(imgSrc, idDom) {
+	let imgBack = this.setImgBack('img/cardBack.png' );
+	let imgUp = this.setImgUp(imgSrc);
+	let up = false;
+	let dom = document.createElement('div');
+	dom.getAttributeNode('id').value = idDom;
 
 	this.flip = function() {
 		if(!this.up) {
@@ -42,10 +39,14 @@ let Card = function(imgSrc, idDom = '') {
 	}
 }
 
-let Memory = function(nblines, nbCols) {
-	this.cards = [];
-	this.nbCards = nblines * nbCols;
+let Memory = function(nblines = 4, nbCols = 4, theme = 'default', idDomCards = 'cardsZone') {
+	let cards = [];
+	let nbCards = nblines * nbCols;
+	let idDomCards = idDomCards;
+	let domCards = document.getElementById(idDomCards);
+	domCards.setProperty('--nbLines', nblines);
+	domCards.setProperty('--nbCols', nbCols);
 	for(i = 0; i < nbCards; i++) {
-		this.cards.push(new Card(IMG_SRC[Math.floor(i / 2)]));
+		this.cards.push(new Card((IMG_SRC[theme] + 'card' + i), 'card' + i));
 	}
 }
