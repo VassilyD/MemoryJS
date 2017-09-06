@@ -1,13 +1,15 @@
-const IMG_SRC = {
-	default: 'img/theme/default/'
-};
+const IMG_SRC = 'img/card';
 
 let Card = function(imgSrc, idDom) {
-	let imgBack = this.setImgBack('img/cardBack.png' );
-	let imgUp = this.setImgUp(imgSrc);
-	let up = false;
 	let dom = document.createElement('div');
 	dom.getAttributeNode('id').value = idDom;
+	let imgBack = this.setImgBack('img/cardBack.jpeg' );
+	let imgUp = this.setImgUp(imgSrc);
+	let up = false;
+
+	this.getDom() {
+		return dom;
+	}
 
 	this.flip = function() {
 		if(!this.up) {
@@ -47,6 +49,8 @@ let Memory = function(nblines = 4, nbCols = 4, theme = 'default', idDomCards = '
 	domCards.setProperty('--nbLines', nblines);
 	domCards.setProperty('--nbCols', nbCols);
 	for(i = 0; i < nbCards; i++) {
-		this.cards.push(new Card((IMG_SRC[theme] + 'card' + i), 'card' + i));
+		var tmp = new Card((IMG_SRC + ('00' + i).slice(-2) + '.svg'), 'card' + i);
+		this.cards.push(tmp);
+		domCards.appendChild(tmp.getDom());
 	}
 }
