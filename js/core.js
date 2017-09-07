@@ -1,3 +1,3 @@
 window.onload = function() {
-	game = new Memory(4, 4);
+	game = new Memory(4, 12);
 }
