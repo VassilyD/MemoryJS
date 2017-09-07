@@ -1,5 +1,7 @@
 body {
 	--nbOr: 1.61803398875;
+	margin: 0;
+	padding: 0;
 }
 
 h1, p {
@@ -15,6 +17,8 @@ h1, p {
 	--cardHeight: calc(var(--cardWidth) * var(--nbOr));
 	width: 100vw;
 	text-align: center;
+	margin: 0;
+	padding: 0;
 }
 
 .cards {
@@ -24,6 +28,8 @@ h1, p {
 	display: inline-block;
 	width: var(--cardWidth);
 	height: var(--cardHeight);
+	margin-left: 0.25vw;
+	margin-right: 0.25vw;
 }
 
 .cardImg {
