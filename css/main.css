@@ -3,13 +3,26 @@ body {
 }
 
 #cardsZone {
+	position: relative;
 	--nbLines: 4;
 	--nbCols: 4;
-	--cardWidth: calc(100% / var(--nbCols));
+	--cardWidth: calc(100vw / (var(--nbCols) * 3));
 	--cardHeight: calc(var(--cardWidth) * var(--nbOr));
 }
 
 .cards {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: var(--cardWidth);
+	height: var(--cardHeight);
+}
+
+.cardImg {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: var(--cardWidth);
 	height: var(--cardHeight);
 }
