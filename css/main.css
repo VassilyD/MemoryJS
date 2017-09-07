@@ -2,12 +2,19 @@ body {
 	--nbOr: 1.61803398875;
 }
 
+h1 {
+	width: 100vw;
+	text-align: center;
+}
+
 #cardsZone {
 	position: relative;
 	--nbLines: 4;
 	--nbCols: 4;
-	--cardWidth: calc(100vw / (var(--nbCols) * 3));
+	--cardWidth: 6vw;
 	--cardHeight: calc(var(--cardWidth) * var(--nbOr));
+	width: 100vw;
+	text-align: center;
 }
 
 .cards {
