@@ -171,7 +171,7 @@ function newGame(difficult) {
 			break;
 
 		case '3':
-			game = new Memory(4, 15);
+			game = new Memory(40, 15);
 			break;
 	}
 }
