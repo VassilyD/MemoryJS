@@ -2,7 +2,7 @@ body {
 	--nbOr: 1.61803398875;
 }
 
-h1 {
+h1, p {
 	width: 100vw;
 	text-align: center;
 }

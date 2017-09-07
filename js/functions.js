@@ -89,6 +89,7 @@ let Memory = function(nbline = 4, nbCol = 4, idCards = 'cardsZone') {
 	this.domCards.setAttribute('style', '--nbLines: ' + nbline + '; --nbCols: ' + nbCol);
 	this.flipped = [];
 	this.score = 0;
+	document.getElementsByTagName('h1')[0].innerHTML = 'Memory JS : score = 0';
 
 	this.getNbFlip = function() {
 		return this.flipped.length;
@@ -153,4 +154,24 @@ let Memory = function(nbline = 4, nbCol = 4, idCards = 'cardsZone') {
 
 	var zone = document.getElementById('cardsZone');
 	zone.parentNode.replaceChild(this.domCards, zone);
+}
+
+function newGame(difficult) {
+	switch(difficult) {
+		case '0':
+			game = new Memory(2, 2);
+			break;
+
+		case '1':
+			game = new Memory(4, 4);
+			break;
+
+		case '2':
+			game = new Memory(4, 8);
+			break;
+
+		case '3':
+			game = new Memory(4, 15);
+			break;
+	}
 }
