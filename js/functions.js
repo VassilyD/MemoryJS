@@ -137,7 +137,7 @@ let Memory = function(nbline = 4, nbCol = 4, idCards = 'cardsZone') {
 	for(k=0;k<1;k++){
 		var tmpCards = [];
 		for(i = 0; i < this.nbCards; i++) {
-			var newI = Math.floor(Math.random() * this.nbCards);
+			var newI = Math.floor(Math.random() * this.cards.length);
 			tmpCards.push(this.cards[newI]);
 			this.cards = this.cards.slice(0, newI).concat(this.cards.slice(newI + 1));
 			/*var tmp = this.cards[i];
