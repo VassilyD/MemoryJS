@@ -134,15 +134,20 @@ let Memory = function(nbline = 4, nbCol = 4, idCards = 'cardsZone') {
 	}
 
 	// Mémange des cartes
-	for(k=0;k<3;k++){
+	for(k=0;k<1;k++){
+		var tmpCards = [];
 		for(i = 0; i < this.nbCards; i++) {
-			var newI = Math.floor(Math.random() * this.nbCards);
-			var tmp = this.cards[i];
+			var newI = Math.floor(Math.random() * this.cards.length);
+			this.cards[newI].getDom().setAttribute('data', i);
+			tmpCards.push(this.cards[newI]);
+			this.cards = this.cards.slice(0, newI).concat(this.cards.slice(newI + 1));
+			/*var tmp = this.cards[i];
 			this.cards[i] = this.cards[newI];
 			this.cards[i].getDom().setAttribute('data', i);
 			this.cards[newI] = tmp;
-			this.cards[newI].getDom().setAttribute('data', newI);
+			this.cards[newI].getDom().setAttribute('data', newI);*/
 		}
+		this.cards = tmpCards.slice(0);
 	}
 	
 	// Ajout des cartes au DOM
