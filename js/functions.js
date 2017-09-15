@@ -1,5 +1,5 @@
 const IMG_SRC = 'img/card';
-const NB_IMG = 40;
+const NB_IMG = 106;
 let game;
 
 let Card = function(imgSrc, idcard, classCard) {
@@ -128,8 +128,8 @@ let Memory = function(nbline = 4, nbCol = 4, idCards = 'cardsZone') {
 	// création des cartes
 	for(i = 0; i < this.nbCards; i += 2) {
 		var tmp = Math.floor(Math.random() * (NB_IMG + 1));
-		var tmp1 = new Card((IMG_SRC + ('00' + tmp).slice(-2) + '.svg'), 'card' + i, 'card' + tmp);
-		var tmp2 = new Card((IMG_SRC + ('00' + tmp).slice(-2) + '.svg'), 'card' + i, 'card' + tmp);
+		var tmp1 = new Card((IMG_SRC + tmp + '.svg'), 'card' + i, 'card' + tmp);
+		var tmp2 = new Card((IMG_SRC + tmp + '.svg'), 'card' + i, 'card' + tmp);
 		this.cards.push(tmp1, tmp2);
 	}
 
