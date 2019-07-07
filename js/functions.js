@@ -89,6 +89,8 @@ let Memory = function(nbline = 4, nbCol = 4, idCards = 'cardsZone') {
 	this.domCards.setAttribute('style', '--nbLines: ' + nbline + '; --nbCols: ' + nbCol);
 	this.flipped = [];
 	this.score = 0;
+	this.startTime = 0;
+	this.pauseTime = 0;
 	document.getElementsByTagName('h1')[0].innerHTML = 'Memory JS : score = 0';
 
 	this.getNbFlip = function() {
